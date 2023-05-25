@@ -5,7 +5,7 @@ const postSchema = mongoose.Schema({
         required: true
     },
     user_id: {
-        type: String,
+        type: String, 
         required: true
     },
     created_date: {
@@ -13,13 +13,13 @@ const postSchema = mongoose.Schema({
         default: Date.now
     },
     modified_date: {
-        type: String,
+        type: Date,
         default: null
     },
     username: {
         type: String,
         required: true
     },
-})
+}, {versionKey: false})
 
 module.exports = mongoose.model('Post', postSchema, 'post')
