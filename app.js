@@ -6,16 +6,16 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-
-app.use(bodyParser.urlEncoded({
-    extended: true
-}))
+// app.use(bodyParser.urlEncoded({
+//     extended: true
+// }))
+app.use(express.urlencoded());
 app.use(bodyParser.json())
 app.use(cors())
 
 // import Route
 const postRoutes = require('./routes/post')
-app.use('/post',  postRoutes)
+app.use('/post', postRoutes)
 // mongoose.connect(process.env.DB_CONNECTION, {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
