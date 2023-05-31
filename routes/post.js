@@ -80,7 +80,7 @@ router.post('/', async (req, res) => {
     })
     try {
         const post = await inputPost.save()
-         res.status(200).json(result(1, "Insert Data Success", post));
+         res.status(200).json(result(1, "Insert Data Success"));
 
     } catch (error) {
         res.status(500).json(result(0, error.message));
@@ -98,11 +98,12 @@ router.put('/', async (req, res) => {
         const post = await Post.updateOne({
             _id: data.id
         }, data)
+
         if (post.matchedCount > 0) {
-          res.status(200).json(result(1, "UpdateData Success", post));
+            res.status(200).json(result(1, "UpdateData Success"));
 
         }else {
-         res.status(200) .json(result(0, "Update Data Failed", post));
+            res.status(200) .json(result(0, "Update Data Failed"));
 
         }
     } catch (error) {
@@ -121,13 +122,13 @@ router.delete('/:id', async (req, res) => {
           if (post.deletedCount > 0) {
                      res
                        .status(200)
-                       .json(result(1, "Delete Data Success", post));
+                       .json(result(1, "Delete Data Success"));
 
           }
           else{
                      res
                        .status(200)
-                       .json(result(0, "Delete Data Failed", post));
+                       .json(result(0, "Delete Data Failed"));
 
           }
     } catch (error) {
