@@ -98,6 +98,9 @@ router.put('/', async (req, res) => {
     const data = {
         id: req.body.id,
         content: req.body.content,
+        foto: req.body.foto,
+        judul: req.body.judul,
+        lokasi: req.body.lokasi,
         modified_date: Date.now()
     }
     try {
