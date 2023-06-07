@@ -48,7 +48,10 @@ router.get('/', async (req, res) => {
                             date: "$modified_date",
                             timezone: "+07:00",
                         },
-                    }
+                    },
+                    lokasi: "$lokasi",
+                    foto: "$foto",
+                    judul: "$judul"
                 }
             },
             {
@@ -77,6 +80,9 @@ router.post('/', async (req, res) => {
     const inputPost = new Post({
         content: req.body.content,
         user_id: req.body.user_id,
+        lokasi: req.body.lokasi,
+        foto: req.body.foto,
+        judul: req.body.judul
     })
     try {
         const post = await inputPost.save()

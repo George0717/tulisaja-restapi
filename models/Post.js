@@ -16,7 +16,20 @@ const postSchema = mongoose.Schema({
     modified_date: {
         type: Date,
         default: null
-    }
+    },
+    lokasi: {
+        type: String,
+        required: true
+    },
+    foto: {
+        type: String,
+        required: true
+ },
+    judul: {
+        type: String,
+        required: true
+ },
+
 }, {versionKey: false})
 
 module.exports = mongoose.model('Post', postSchema, 'post')
